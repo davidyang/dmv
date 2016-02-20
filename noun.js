@@ -47,7 +47,7 @@ class Noun extends require('./afterSetup'){
    * @param  {string[]|string} verbs - Either the string '*', which authorizes all possible verbs to the given role, or an array of verbs to authorize.
    */
   authorize(role, verbs) {
-    if(verbs === '*') {
+    if(verbs === '*' || verbs === ['*']) {
       verbs = this.verbs;
     } else {
       verbs = verbs.filter( (v) => this.verbs.has(v), this);
